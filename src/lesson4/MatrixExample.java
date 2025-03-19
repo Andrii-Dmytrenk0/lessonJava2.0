@@ -27,6 +27,8 @@ public class MatrixExample {
 
         Arrays.sort(flatArray);
         System.out.println("sorted Array: " + Arrays.toString(flatArray));
+
+        int[][] ints = repairMatrix(flatArray, 3, 3);
     }
 
     public static int[] flattenMatrix(int[][] matrix) {
@@ -42,4 +44,24 @@ public class MatrixExample {
         }
         return flatArray;
     }
+
+    
+    public static int[][] repairMatrix(int[] flatArray,int rows, int cols){
+        if (flatArray.length != rows * cols){
+            System.out.println("Error, try again");
+            return null;
+        };
+
+        int[][] matrixNew = new int[rows][cols];
+
+        int index = 0;
+        for (int i = 0;i < rows; i++){
+            for (int j = 0; j < cols;j++){
+                matrixNew[i][j] = flatArray[index++];
+                System.out.print(matrixNew[i][j] + " ");
+            }
+            System.out.println();
+        }
+        return matrixNew;
+    };
 }
