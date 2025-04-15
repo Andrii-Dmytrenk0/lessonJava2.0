@@ -1,6 +1,5 @@
 package src.lesson5;
 
-import java.util.Arrays;
 
 public class StringPractice {
     public static void main(String[] args) {
@@ -12,6 +11,8 @@ public class StringPractice {
 
         String replace = ReplaceNumbers("Andrii901237312");
         System.out.println(replace);
+
+        DeleteDuplicates("Java is a power");
     }
 
     public static String isPalindrome(String string){
@@ -30,9 +31,20 @@ public class StringPractice {
         int count = words.length;
         String result = String.valueOf(count);
         return result;
-    };
+    }
 
     public static String ReplaceNumbers(String string){
         return string.replaceAll("\\d", "*");
-    };
+    }
+
+    public static String DeleteDuplicates(String string){
+        char[] string1 = string.toCharArray();
+        String string2 = "";
+        for (char i : string1){
+            
+            string2 += i;
+        }
+
+        return string2;
+    }
 }
